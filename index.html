@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Empefire Oppgave</title>
+	<style type="text/css">
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+		body { margin: 0; padding: 0; font-family: 'Open Sans', sans-serif;}
+		#ad_main_container {display: block; overflow:hidden;
+			max-width: 100%;
+			cursor: pointer; background: #383737; background-repeat: no-repeat;}
+		#ad_container{ position:relative;}
+					
+		#ad_txt1{position: absolute; margin-left: 50px;
+        margin-top: -60px; text-align: center; color: #23CEDD; 
+        text-shadow: 1px 1px 0px rgba(4, 99, 150, 0.8), 2px 6px 6px rgba(0,0,0,0.3),
+                 0px -3px 35px rgba(255,255,255,0.4);
+         font-size: 3.5vw; text-transform: uppercase; z-index: 2;}
+		#ad_txt2{position: absolute; right: 25px;
+        margin-top: 148px; text-transform: uppercase; color: #F25907; text-shadow: 1px 1px 0px #000; font-size: 3.0vw; z-index: 3;}
+		#ad_txt3{position: absolute; margin-left: 40px;
+        margin-top: 55px; text-transform: uppercase; color: #F25907; text-shadow: 1px 1px 1px #290a02, 2px 2px 4px #0a0a0a; font-size: 4.0vw; z-index: 3;}
+        #ad_txt4{position: absolute; right: 25px;
+        margin-top: 188px; color: #F25907; font-size: 2.5vw; text-transform: uppercase; z-index: 3;}
+		a#ad_button{float: right; margin-top: 10px; margin-right: 10px;
+  			 display: block;
+          height: 25px;
+          width: 180px; background: #f0811f;
+          background-image: -webkit-linear-gradient(top, #f0811f, #fa9d12);
+          background-image: -moz-linear-gradient(top, #f0811f, #fa9d12);
+          background-image: -ms-linear-gradient(top, #f0811f, #fa9d12);
+          background-image: -o-linear-gradient(top, #f0811f, #fa9d12);
+          background-image: linear-gradient(to bottom, #f0811f, #fa9d12);
+          border-radius: 4px;
+          box-shadow: 2px 2px 3px #5c2608;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          color: #fff; text-shadow: .5px .5px 0px #8a868a; letter-spacing: 1px; padding: 5px 5px 20px 5px;
+          text-transform: uppercase;
+          font-size: 25px; text-align: center;
+          text-decoration: none; }  
+          #ad_button{z-index: 3;}
+
+          #ad_lyd{display:inline-block; color: #FF9019; text-shadow: -1px -1px 0px #A32E00, 1px 1px 1px #701A00, 1px 1px 3px #f00c0c;}
+          
+     #ad_mount_container #ad_mount{position: absolute; width: 100%; height: 250px; opacity: 0; z-index: 1;}
+      #ad_equalizer_container #ad_equalizer{position: absolute; width: 100%; height: 250px; opacity: 0;} 
+      #ad_sound_container #ad_sound{position: absolute; width: 160px; height: 250px; margin-top: 20px; opacity: 0; z-index: 2;}
+      #ad_headphones_container #ad_headphones{position: absolute; width: 120px; height: 130px; left: 140px; margin-top: 135px; opacity: 0; z-index: 2;}
+
+      @media (max-width: 500px){#ad_txt1, #ad_txt2, #ad_txt3, #ad_txt4{font-size: 18px;}
+      #ad_txt2{text-align: right; right: 3px;}
+      #ad_txt3{margin-left: 5px;}
+      #ad_txt4{margin-top: 210px; right: 5px;}}
+      @media (max-width: 680px){a#ad_button{font-size: 18px; height: 43px;
+        width: 80px; padding: 0px; line-height: 1.1; letter-spacing: none;}}
+	</style>
+	<!--[if lt IE 10]>
+    <style>
+    #ad_equalizer_container #ad_equalizer, #ad_headphones_container #ad_headphones{opacity: 1}
+    #ad_button{opacity: 0}
+    </style>
+    <![endif]-->
+</head>
+<body>
+	<div id="ad_main_container" onclick="window.open('http://www.url.no','new_window');"
+  style="display:block;width:100%; height:250px;">
+    <div id="ad_container">
+    	<div id="ad_txt1">Hvorfor er det så stille?</div>
+    	<div id="ad_txt2">Finn ut <span id="ad_lyd">lyd</span> til rett tid på rett sted</div>
+    	<div id="ad_txt3">Slik den er ment å bli hørt!</div>
+    	<div id="ad_txt4">expert.no</div>
+    	<a id="ad_button" href="#">klikk her!</a>
+      <div id="ad_mount_container"><img id="ad_mount" src="mount1.png" alt="mountain"> </div>
+      <div id="ad_equalizer_container"><img id="ad_equalizer" src="equalizer1.png" alt="equalizer"></div>
+      <div id="ad_sound_container"><img id="ad_sound" src="sound1.png" alt="sound"></div>
+      <div id="ad_headphones_container"><img id="ad_headphones" src="headphonesrot1.png" alt="headphones"></div>
+    </div>
+	</div>  
+
+<!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  
+		<script type="text/javascript">
+
+          (function(){
+              var time1 = new TimelineMax();
+           
+      
+            time1.to("#ad_mount", .2, {width:"100%", height:"251px", opacity: 1}).from("#ad_mount", 1.4, {top: 170, ease:Quint.easeOut}).to("#ad_txt1", 1, {top: 100, ease: Bounce.easeOut}, "-=.6")
+            .to("#ad_equalizer", .2, {width:"100%", height:"210px", opacity: .7}, "-=.6").from("#ad_equalizer", 2.2, {top: -330, ease: Power4.easeOut})
+            .to("#ad_txt1", 2, {opacity: 0}, "-=.5")
+            .to("#ad_sound", .1, {height:"250px", opacity: 1},"-=2.5").from("#ad_sound", 2.4, {top: 200, ease: Bounce.easeOut},"-=2.5")
+            .to("#ad_headphones", .4, {opacity: 1}, "-=2").to("#ad_headphones", 1.8, {rotation:710, ease: Power2.easeOut}, "-=2")            
+            .from("#ad_txt2", 1.3, {opacity: 0, scale: 1.3}, "-=1")
+            .from("#ad_txt3", 0.9, {opacity: 0, scale: 0.2}, "-=.2")
+            .from("#ad_txt4", 1, {opacity: 0, right: -50}, "-=.9")
+            .to("#ad_equalizer", 1.8,{opacity:0})
+            .from("#ad_button", 1, {opacity: 0, scale: 0.1, ease: Bounce.easeOut}, "-=2");
+
+          }());
+
+</script>
+<script type="text/javascript">
+$('#ad_main_container')
+.data('counter', 0)                            
+.click(function() {
+    var counter = $(this).data('counter');    
+    $(this).data('counter', counter + 1);        
+    // alert($(this).data('counter'));             
+});
+</script>		
+
+</body>
+</html>
+
+
+
